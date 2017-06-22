@@ -3,16 +3,13 @@ package com.cooksys.friendlr.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
+public class Pet {
 
 	Integer id;
 	
 	String firstName;
 	
-	String lastName;
-	
-	List<Person> friends = new ArrayList<Person>();
-	List<Pet> pets = new ArrayList<Pet>();
+	List<Person> owners = new ArrayList<Person>();
 
 	public Integer getId() {
 		return id;
@@ -30,28 +27,12 @@ public class Person {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public List<Person> getOwners() {
+		return owners;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public List<Person> getFriends() {
-		return friends;
-	}
-
-	public void setFriends(List<Person> friends) {
-		this.friends = friends;
-	}
-	
-	public List<Pet> getPets() {
-		return pets;
-	}
-
-	public void setPets(List<Pet> pets) {
-		this.pets = pets;
+	public void setOwners(List<Person> owners) {
+		this.owners = owners;
 	}
 
 	@Override
@@ -70,7 +51,7 @@ public class Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		Pet other = (Pet) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -78,6 +59,5 @@ public class Person {
 			return false;
 		return true;
 	}
-	
-	
+
 }
